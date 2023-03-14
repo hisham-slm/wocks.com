@@ -1,0 +1,169 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'customer_static/shoes.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'customer_static\Bootstrap\css\bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'customer_static/Bootstrap/js/bootstrap.js'%}">
+    <style>
+        .contents {
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            background-color: linear-gradient(to right, rgba(117, 40, 40, 0.99), rgb(242, 242, 242));
+            padding: 10px;
+
+        }
+
+        .contents a {
+            justify-content: center;
+            padding: 20px;
+            -webkit-text-stroke-width: 100%;
+            color: rgb(29, 0, 0);
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" href=""></a>
+                <div class="logo">
+                    <img src="{% static 'customer_static/images/wox_logo.jpg'%}" alt="" width="90" height="60"
+                        class="d-inline-block align-text-top">
+                </div>
+                <h4 style="text-align: center;" class="name me-auto">Wocks Fashion Store</h4>
+
+            </div>
+
+        </nav>
+
+    </div>
+    <div class="contents">
+        <a href="{% url 'customer:shoespage' %}">Shoes</a>
+        <a
+            href="https://api.whatsapp.com/send/?phone=%2B917306350399&text&type=phone_number&app_absent=0">WhatsAppUs</a>
+        <a href="{% url 'customer:add_to_cart' %}">Cart</a>
+        <a href="">Orders</a>
+        <a href="{% url 'customer:logout' %}">Logout</a>
+    </div>
+    <style>
+        .button {
+            /* font-family: "Poppins"; */
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            color: #800;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            background-color: white;
+            transition: 0.3s;
+            /* box-shadow: 5px 5px 10px #888; */
+        }
+
+        .button:hover {
+            /* font-family: "Poppins"; */
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition: 0.3s;
+            background-color: #800;
+            /* box-shadow: 5px 5px 10px #888; */
+        }
+
+        .container {
+            padding: 50px;
+        }
+
+        #heart {
+            outline-style: 1px solid black;
+        }
+
+        .button button {
+            display: flex;
+            text-decoration: none;
+            border: 0px;
+            /* box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513); */
+            font-family: 'Poppins';
+            color: white;
+            width: 150px;
+        }
+
+        .details h3 {
+            color: #800;
+            text-align: left;
+            font-weight: bolder;
+        }
+    </style>
+
+
+    <div class="container">
+        <div class="row">
+            {% for prod in products %}
+            <div class="col-md-3 col-6">
+                <a href="{% url 'customer:prod_details' prod.id%}">
+                    <div class="product_card">
+                        <img src="{{prod.image.url}}" alt="">
+                        <div class="details">
+                            <h5><a href="{% url 'customer:prod_details' prod.id%}">{{prod.product_name}}</a></h5>
+                            <h3>{{prod.price}}/</h3>
+                        </div>
+
+                        <div class="button_outer">
+                            <button class="button">Add to cart</button>
+                            <button class="button">Buy Now</button>
+                        </div>
+                        <a href=""><i id="heart" class="fa fa-heart"
+                                style="font-size:22px;color:white;padding:20px;"></i></a>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container-fluid footer">
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Follow Us:</p>
+
+                <a href="https://www.instagram.com/wocksfashions/"><i style="font-size:20px" class="fa">&#xf16d;
+                        wocksfashions</i></a> <br>
+                <a href="https://www.instagram.com/wocks_watches/"><i style="font-size:20px" class="fa">&#xf16d;
+                        wocks_watches</i></a><br> <a href="https://www.instagram.com/pretty_petals.in/"><i
+                        style="font-size:20px" class="fa">&#xf16d; pretty_petals.in</a><br>
+            </div>
+
+
+            <div class="col-md-6">
+                <p>Join our WhatsApp Group here</p>
+                <a href="https://chat.whatsapp.com/CbSjukWBBZdHjPgYxSFX1G"><i style="font-size:20px" class="fa">&#xf232;
+                        Wocks Fashion Store</i></a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

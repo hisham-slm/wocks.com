@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@font-face{
+    font-family: Rubiks Puddle;
+    src: url(Rubik80sFade-Regulare.ttf)
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-style: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+}
+
+.container-fluid{
+    background-color:  transparent;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.logo{
+    padding-top: 10px;
+    padding-right:5px ;
+    text-align: center;
+    grid-column-start: 1;
+    background-color: 2px solid black;
+    width: 25%;
+
+}
+
+.logo img{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.navbar-brand{
+    width: 100%;
+}
+
+.name{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: 'Poppins', sans-serif;;
+    justify-content: right;
+    text-align: center;
+    margin: 1px;
+    grid-column-start: 2;
+    text-shadow: 10px 0px 5px #55555506;
+    background-color: 2px solid black;
+}
+
+.grids{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto; 
+    font-style: 'Poppins', sans-serif;
+    justify-content: center;
+    grid-gap: 20px;
+    border: 2px solid #000000 ;
+    
+}
+
+.product_card img {
+    justify-content: center;
+    padding:20px;
+    width: 180px;
+    height:200px;
+    box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.209);
+}
+.product_card h3,a{
+    text-decoration: none;
+    font-family:'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: medium;
+}
+
+.product_card a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family:'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.footer{
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    font-family: 'Poppins';
+}
+
+.footer p{
+    font-family: 'Poppins';
+    font-size: medium;
+}
+
+.instagram a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.whatsapp{
+    font-size: medium;
+}
+
+.whatsapp a{
+    /* text-decoration: none; */
+    color: rgb(255, 255, 255);
+    font-size: small;
+}

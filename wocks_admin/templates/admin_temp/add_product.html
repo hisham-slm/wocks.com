@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'customer_static\Bootstrap\css\bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'customer_static/Bootstrap/js/bootstrap.js'%}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        *{
+            font-family: 'Poppins';
+        }
+        .contents {
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            background-color: linear-gradient(to right, rgba(117, 40, 40, 0.99), rgb(242, 242, 242));
+            padding: 10px;
+
+        }
+
+        .contents a {
+            justify-content: center;
+            padding: 20px;
+            -webkit-text-stroke-width: 100%;
+            color: rgb(29, 0, 0);
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bolder;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .form input,
+        textarea {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            border: 1px solid rgba(0, 0, 0, 0.204);
+            color: rgb(0, 0, 0);
+            /* box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513); */
+            height: 25px;
+            width: 300px;
+            caret-color: rgb(232, 219, 219);
+            font-family: 'Poppins';
+            caret-color: #800;
+            background-color: rgba(234, 234, 234, 0.1);
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button button {
+            text-decoration: none;
+            border: 0px;
+            color: rgb(0, 0, 0);
+            /* box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513); */
+            height: 25px;
+            font-family: 'Poppins';
+            background-color: white;
+            transition: 0.3s;
+            color: #800;
+        }
+
+        .button button:hover {
+            text-decoration: none;
+            border: 0px;
+            color: rgb(0, 0, 0);
+            /* box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513); */
+            height: 25px;
+            font-family: 'Poppins';
+            background-color: #800;
+            transition: 0.3s;
+            color: white;
+        }
+
+        .msg {
+            display: flex;
+            justify-content: center;
+        }
+
+        .added {
+            text-align: center;
+        }
+        .radio{
+            display: flex;
+            justify-content: center;
+        }
+        .radio input{
+            margin: 5px;
+            width: fit-content;
+            font-family: 'Poppins';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" href=""></a>
+                <div class="logo">
+                    <img src="{% static 'customer_static/images/wox_logo.jpg'%}" alt="" width="90" height="60"
+                        class="d-inline-block align-text-top">
+                </div>
+                <h4 style="text-align: center;" class="name me-auto">Wocks Fashion Store</h4>
+
+            </div>
+
+        </nav>
+
+    </div>
+    <div class="contents">
+        <a href="">Update Stock</a>
+        <a href="">Orders</a>
+        <a href="{% url 'admin:logout' %}">Logout</a>
+    </div>
+    <div class="content">
+        <div class="form">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input name="image" type="file">
+                <input type="text" name="name" placeholder="Product Name">
+                <input type="number" name="price" placeholder="Price">
+                <div class="radio">
+                    <input type="radio" name="category" value="Shoes"> Shoes
+                    <input type="radio" name="category" value="watches"> Watches
+                </div>
+                <textarea style="padding: 50px;" name="description" placeholder="Description"></textarea>
+                <div class="button">
+                    <button type="submit">Add Product</button>
+                </div>
+                <div class="msg">
+                    <span class="added">{{msg}}</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+{% extends 'cust_temp/extension.html' %}
+{% load static %}
+{% block content %}
+<link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
+<style>
+    .cart_table {
+        border: 1px solid rgba(0, 0, 0, 0.112);
+        margin: 30px;
+    }
+
+    .product {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+    }
+
+    .top_left {
+        width: 50%;
+    }
+
+    .top_right {
+        justify-content: left;
+    }
+
+    .image img {
+        height: auto;
+        width: 50%;
+    }
+
+    select {
+        background-color: white;
+        color: #800;
+        border: 1px solid rgba(0, 0, 0, 0.104);
+        padding: 5px;
+    }
+
+    select:focus {
+        border: none;
+    }
+
+    .button {
+        padding: 10px;
+        padding-left: 0px;
+    }
+
+    .button button {
+        /* font-family: "Poppins"; */
+        font-weight: bolder;
+        border: none;
+        color: #800;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.134);
+        /* box-shadow: 5px 5px 10px #888; */
+        transition: 0.3s;
+    }
+    .button button:hover {
+        /* font-family: "Poppins"; */
+        font-weight: bolder;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        background-color: #800;
+        border: 1px solid rgba(0, 0, 0, 0.134);
+        /* box-shadow: 5px 5px 10px #888; */
+        transition: 0.3s;
+    }
+
+    .remove {
+        padding-top: 25px;
+    }
+
+    .remove button {
+        border: none;
+        background-color: #800;
+        color: white;
+    }
+
+    .total {
+        display: grid;
+        justify-content: right;
+        padding: 20px;
+    }
+</style>
+
+<div class="container_fluid">
+    <div class="cart_table">
+        {% for cart in cart_data %}
+        <div class="product">
+            <div class="top_left">
+                <div class="image">
+                    <img src="{{cart.product.image.url}}" alt="">
+                </div>
+            </div>
+            <div class="top_right">
+                <h5></h5>
+                <h6>Total : {{cart.product.price}}/-</h6>
+                <select name="size" id="size">
+                    <option value="">Select Size</option>
+                    <option value="40">40</option>
+                    <option value="42">42</option>
+                    <option value="44">44</option>
+                    <option value="46">46</option>
+                    <option value="48">48</option>
+                </select>
+                <select name="size" id="size">
+                    <option value="1">Quantity</option>
+                    {% for size in size %}
+                    <option value="{{size}}">{{size}}</option>
+                    {% endfor %}
+                    
+                </select>
+
+                <div class="remove">
+                    <button>Remove Item</button>
+                </div>
+            </div>
+            
+
+        </div>
+        {% endfor %}
+        <div class="total">
+            <div class="grand_total">
+                <h5>{{grand_total}}/-</h5>
+            </div>
+            <div class="button">
+                <a href=""><button>Check Out</button></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

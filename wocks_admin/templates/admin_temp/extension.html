@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'customer_static\Bootstrap\css\bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'customer_static/Bootstrap/js/bootstrap.js'%}">
+    <style>
+        .contents {
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            background-color: linear-gradient(to right, rgba(117, 40, 40, 0.99), rgb(242, 242, 242));
+            padding: 10px;
+
+        }
+
+        .contents a {
+            justify-content: center;
+            padding: 20px;
+            -webkit-text-stroke-width: 100%;
+            color: rgb(29, 0, 0);
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" href=""></a>
+                <div class="logo">
+                    <img src="{% static 'customer_static/images/wox_logo.jpg'%}" alt="" width="90" height="60"
+                        class="d-inline-block align-text-top">
+                </div>
+                <h4 style="text-align: center;" class="name me-auto">Wocks Fashion Store</h4>
+
+            </div>
+
+        </nav>
+
+    </div>
+    <div class="contents">
+        <a href="{% url 'admin:add_product' %}">Add Product</a>
+        <a href="">Update Stock</a>
+        <a href="">Orders</a>
+        <a href="{% url 'admin:logout' %}">Logout</a>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+    
+</body>
+
+</html>

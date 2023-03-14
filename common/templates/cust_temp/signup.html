@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'customer_static/login_style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="login_card_outer">
+        <div class="login_card">
+            <h1 class="login_header">Sign Up</h1>
+            <form id="form" action="" class="login_form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input id="first_name" name="first_name" type="text" placeholder="First Name">
+                <span id="fn_error"></span>
+                <input id="last_name" name="last_name" type="text" placeholder="Last Name">
+                <span id="ln_error"></span>
+                <input id="email" name="email" type="email" placeholder="Enter your Email">
+                <span id="email_error"></span>
+                <input id="password" name="password" type="password" placeholder="Password">
+                <span id="pass_error"></span>
+                <button id="submit" type="submit">Sign Up</button>
+            </form>
+            <div class="error">
+                <span class="email_exist" id="email_exist"></span>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#submit').click(function () {
+                email = $('#email').val()
+                if (email == '') {
+                    $('#email_error').html("Fill up this feild")
+                    $("#form").removeAttr('method')
+                }
+                else {
+                    $('#email_error').html("")
+                }
+                first_name = $('#first_name').val()
+                if (email == '') {
+                    $('#fn_error').html("Fill up this feild")
+                    $("#form").removeAttr('method')
+                }
+                else {
+                    $('#fn_error').html("")
+                }
+
+
+                last_name = $('#last_name').val()
+                if (email == '') {
+                    $('#ln_error').html("Fill up this feild")
+                    $("#form").removeAttr('method')
+                }
+                else {
+                    $('#ln_error').html("")
+                }
+
+
+                password = $('#password').val()
+                if (email == '') {
+                    $('#pass_error').html("Fill up this feild")
+                    $("#form").removeAttr('method')
+                }
+                else {
+                    $('#pass_error').html("")
+                }
+
+            })
+
+        })
+
+
+
+
+
+
+        $('#email').change(function () {
+
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()  //passing csrf token in ajax request
+                }
+            })
+
+            $.ajax({
+                url: "{% url 'customer:email_exist' %}",  // url in which ajax call is made
+                type: 'POST',  //method in which data is send
+                data: {
+                    email: $(this).val()  //sending data in json fromat here, key is email
+                },
+                success: function (response) {
+                    console.log(response.status)
+                    if (response.status == true) {
+                        $("#form").removeAttr('method')
+
+                        $('#email_exist').html('Sorry this Email already exists');
+                        $("#email").click(function () {
+                            var email = $('#email').val("")
+                            console.log(email.val)
+                        })
+                    }
+                }
+            })
+
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

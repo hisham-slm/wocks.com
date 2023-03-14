@@ -1,0 +1,39 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'customer_static/login_style.css' %}">
+</head>
+
+<body>
+    <div class="login_card_outer">
+        <div class="login_card">
+            <h1 class="login_header">Log In</h1>
+            <form action="" class="login_form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input name="email" type="text" placeholder="Enter your Email">
+                <input name="password" type="password" placeholder="Password">
+                <button type="submit">Log In</button>
+            </form>
+            <div class="error">
+                <span class="email_exist" id="email_exist">{{msg}}</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="forgot">
+        <a href="">Forgot Password?</a><br>
+        <a href="{% url 'customer:signup'%}">Don't have an account yet? Come Join</a>
+    </div>
+
+</body>
+
+</html>

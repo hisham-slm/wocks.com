@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top_part{
+    display: grid;
+    grid-template-columns: auto auto;
+    position: static;
+}
+
+.product_name h1{
+    text-align: left;
+}
+.prod_image{
+    display: flex;
+    justify-content: left;
+    padding: 5px;
+}
+.prod_image img{
+    aspect-ratio: 1/1;
+    position: absolute;
+    /* width: 50%; */
+}
+.detials{
+    display: flex;
+    justify-content: left;
+}
+.price h1{
+    padding: 20px;
+    background-color: 2px solid black;
+    text-align: left;
+}

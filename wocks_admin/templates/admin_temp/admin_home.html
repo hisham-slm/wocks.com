@@ -1,0 +1,96 @@
+{% extends 'admin_temp/extension.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'customer_static/shoes.css'%}">
+
+<title>Shoes</title>
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+    * {
+        font-family: 'Poppins';
+    }
+
+    .button {
+        /* font-family: "Poppins"; */
+        font-weight: bold;
+        background-color: transparent;
+        border: none;
+        color: #800;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        background-color: white;
+        transition: 0.3s;
+        /* box-shadow: 5px 5px 10px #888; */
+    }
+
+    .button:hover {
+        /* font-family: "Poppins"; */
+        font-weight: bold;
+        background-color: transparent;
+        border: none;
+        color: rgb(255, 255, 255);
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition: 0.3s;
+        background-color: #800;
+        /* box-shadow: 5px 5px 10px #888; */
+    }
+
+    .container {
+        padding: 50px;
+    }
+
+    #heart {
+        outline-style: 1px solid black;
+    }
+
+    .button button {
+        display: flex;
+        text-decoration: none;
+        border: 0px;
+        /* box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513); */
+        font-family: 'Poppins';
+        color: white;
+        width: 150px;
+    }
+
+    .details h3 {
+        color: #800;
+        text-align: left;
+        font-weight: bolder;
+    }
+</style>
+
+
+<div class="container">
+    <div class="row">
+        {% for prod in products %}
+        <div class="col-md-3 col-6">
+            <a href="{% url 'admin:prod_details' prod.id%}">
+                <div class="product_card">
+                    <img src="{{prod.image.url}}" alt="">
+                    <div class="details">
+                        <h5><a href="{% url 'admin:prod_details' prod.id%}">{{prod.product_name}}</a></h5>
+
+                    </div>
+
+                    <a href=""><i id="heart" class="fa fa-heart"
+                            style="font-size:22px;color:white;padding:20px;"></i></a>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

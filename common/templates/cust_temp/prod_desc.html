@@ -1,0 +1,201 @@
+{% extends 'cust_temp/extension.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+    .top{
+        display: flex;
+        justify-content: center;
+    }
+
+    .top_left {
+        display: flex;
+        justify-content: left;
+        padding: 50px;
+        width: 50%;
+    }
+
+    .prdct_card {
+        border-right: 1px solid rgba(0, 0, 0, 0.145);
+        width: 100%;
+    }
+
+    .prdct_card img {
+        aspect-ratio: 1/1;
+        justify-content: left;
+        width: 75%;
+        height: auto;
+
+
+    }
+
+    .product_details h1,
+    p {
+        text-align: left;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .product_details p {
+        font-size: large;
+    }
+
+    .prod_image {
+        padding: 20px;
+    }
+
+    .top_right {
+        display: flex;
+        justify-content: left;
+        padding: 50px;
+        width: 50%;
+
+    }
+
+    .price h1 {
+        color: #800;
+    }
+
+    .desc p {
+        text-align: justify;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: left;
+        /* border: 1px solid rgba(0, 0, 0, 0.134); */
+
+
+    }
+
+    .buttons button {
+        /* font-family: "Poppins"; */
+        font-weight: bolder;
+        background-color: transparent;
+        border: none;
+        color: #800;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+        background-color: white;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.134);
+        /* box-shadow: 5px 5px 10px #888; */
+        transition: 0.3s;
+    }
+
+    .buttons button:hover {
+        /* font-family: "Poppins"; */
+        font-weight: bolder;
+        background-color: transparent;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 25px;
+        background-color: #800;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.134);
+        /* box-shadow: 5px 5px 10px #888; */
+        transition: 0.3s;
+    }
+    .bottom{
+        display: flex;
+        justify-content: center;
+        padding: 70px;
+        border: 2px solid rgba(0, 0, 0, 0.142);
+        width: 100%;
+    }
+    .bottom input{
+        width: 200%;
+        padding: 2px;
+        border: 2px solid rgba(0, 0, 0, 0.142);
+        margin: 5px;
+        caret-color: #800;
+    }
+    .bottom button{
+        margin: 5px;
+        background-color: transparent;
+        border: none;
+        color: #800;
+        text-align: center;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.134);
+        /* box-shadow: 5px 5px 10px #888; */
+        transition: 0.3s
+    }
+    .bottom button:hover{
+        margin: 5px;
+        background-color: transparent;
+        border: none;
+        color: white;
+        text-align: center;
+        background-color: #800;
+        border: 1px solid rgba(0, 0, 0, 0.134);
+        /* box-shadow: 5px 5px 10px #888; */
+        transition: 0.3s
+    }
+    .bottom_left{
+        display: flex;
+        justify-content: left;
+        padding: 70px;
+        width: 50%;
+    }
+    .bottom_right{
+        display: flex;
+        justify-content: left;
+        padding: 70px;
+        border-left: 2px solid rgba(0, 0, 0, 0.142);
+        width: 50%;
+    }
+</style>
+
+<div class="top">
+    <div class="top_left">
+        <div class="prdct_card">
+            <div class="prod_image">
+                <a href="{{product.image.url}}"><img
+                        src="{{product.image.url}}" alt="" height="200px"
+                        width="200px"></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="top_right">
+        <div class="product_details">
+            <h1>{{product.product_name}}</h1>
+            <div class="price">
+                <h1>{{product.price}}/-</h1>
+                <div class="desc">
+                    <p>{{product.description}}</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="{% url 'customer:add_to_cart' %}"><button>Add To Cart</button></a>
+                <a href=""><button>Buy Now</button></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="bottom">
+    <div class="bottom_left">
+        <form class="form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h5>Reviews</h5>        <input name="comment" type="text" placeholder="Add your reviews">
+            <a href="{% url 'customer:review' product.id %}"><button value="Submit" type="submit">Submit</button></a>
+        </form>
+    </div>
+    <div class="bottom_right">
+        {{review.comment}}
+        
+    </div>
+</div>
+</div>
+
+{% endblock %}

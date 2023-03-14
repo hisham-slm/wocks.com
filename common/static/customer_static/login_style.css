@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+    background-image: linear-gradient(to right, rgb(252, 252, 252), rgb(255, 255, 255));
+
+
+}
+
+.login_card_outer {
+    display: flex;
+    justify-content: center;
+    color: #800;
+}
+
+.login_card {
+    width: 30%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: grid;
+    grid-gap: 20px;
+    justify-content: center;
+    padding-bottom: 20px;
+    box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513);
+    font-family: 'Poppins';
+}
+.login_header {
+    text-align: center;
+    font-family: 'Poppins';
+}
+.login_form button{
+    margin: 20px;
+}
+.login_form input{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    border: 0px;
+    color: rgb(0, 0, 0);
+    /* box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513); */
+    height: 25px;
+    width: 300px;
+    caret-color: rgb(232, 219, 219);
+    font-family: 'Poppins';
+    caret-color: #800;
+    background-color: rgba(234, 234, 234, 0.1);
+    
+}
+.login_card button{
+    text-decoration: none;
+    border: 0px;
+    color: rgb(0, 0, 0);
+    /* box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513); */
+    height: 25px;
+    display: grid;
+    justify-content: center;
+    width: 300px;
+    font-family: 'Poppins';
+    background-color: white;
+    transition: 0.3s;
+    color: #800;
+}
+.login_card button:hover {
+    text-decoration: none;
+    border: 0px;
+    color: rgb(0, 0, 0);
+    /* box-shadow: 5px 5px 30px rgba(136, 136, 136, 0.513); */
+    height: 25px;
+    display: grid;
+    justify-content: center;
+    width: 300px;
+    font-family: 'Poppins';
+    background-color: #800;
+    color: white;
+    font-weight: bolder;
+    transition: 0.3s;
+    font-size: medium;
+}
+.forgot {
+    font-family: 'Poppins';
+    /* margin-left: 500px; */
+    text-align: center;
+    padding: 15px;
+    
+
+}
+.forgot a{
+    text-decoration: none;
+    transition: 0.3s;
+    color: #800;
+}
+.forgot a:hover{
+    text-decoration: none;
+    color: #800;
+    font-size: large;
+    transition: 0.3s;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+}
+.email_exist{
+    text-align: center;
+}

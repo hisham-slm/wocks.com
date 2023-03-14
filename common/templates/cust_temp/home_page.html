@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wocks Fashion Store</title>
+    <link rel="stylesheet" href="{% static 'customer_static/Bootstrap/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'customer_static/home_page.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'customer_static/Bootstrap/css/bootstrap.css'%}">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 sticky">
+                <nav class="navbar bg-light">
+
+                    <a class="navbar-brand" href="#" href=""></a>
+                    <div class="logo">
+                        <img src="{% static 'customer_static/images/wox_logo.jpg'%}" alt="Logo" width="50" height="30"
+                            class="d-inline-block align-text-top">
+                    </div>
+                    <h4 class="name me-auto">Wocks Fashion Store</h4>
+
+
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="contents ">
+                <a href="{% url 'customer:shoespage' %}">Shoes</a>
+                <a href="{% url 'customer:watches' %}">Watches</a>
+                <a href="{% url 'customer:login' %}">Log In</a>
+                <a
+                    href="https://api.whatsapp.com/send/?phone=%2B917306350399&text&type=phone_number&app_absent=0">WhatsAppUs</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="nike_blazers ">
+                <img src="{% static 'customer_static/images/wearing_blazers.jpg'%}" alt="">
+                <img class="img2" src="{% static 'customer_static/images/wearing_blazers2.jpg'%}" alt="">
+                <h4>Nike Blazers</h4>
+            </div>
+        </div>
+
+
+
+        <div class="vans">
+            <img src="{% static 'customer_static/images/vans2.jpg'%}" alt="">
+            <img src="{% static 'customer_static/images/vans.jpg'%}" alt="">
+            <h4>Vans Old Skool</h4>
+        </div>
+
+
+
+        <div class="adidas_badbunny">
+            <img class="img2" src="{% static 'customer_static/images/adidas_bunny2.jpg'%}" alt="">
+            <img src="{% static 'customer_static/images/adidas_bunny.jpg'%}" alt="">
+            <h4>Adidas Bad Bunny</h4>
+        </div>
+
+
+        <div class="new_balance">
+            <img class="img2" src="{% static 'customer_static/images/nb650_2.jpg'%}" alt="">
+            <img src="{% static 'customer_static/images/nb650.jpg'%}" alt="">
+            <h4>New Balance 650</h4>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="instagram">
+                <p>Follow Us:</p>
+
+                <a href="https://www.instagram.com/wocksfashions/"><i style="font-size:20px" class="fa">&#xf16d;
+                        wocksfashions</i></a> <br>
+                <a href="https://www.instagram.com/wocks_watches/"><i style="font-size:20px" class="fa">&#xf16d;
+                        wocks_watches</i></a><br> <a href="https://www.instagram.com/pretty_petals.in/"><i
+                        style="font-size:20px" class="fa">&#xf16d; pretty_petals.in</a>
+            </div>
+
+            <div class="whatsapp">
+                <p>Join our WhatsApp Group here</p>
+                <a href="https://chat.whatsapp.com/CbSjukWBBZdHjPgYxSFX1G"><i style="font-size:20px" class="fa">&#xf232;
+                        Wocks Fashion Store</i></a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

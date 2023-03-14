@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@font-face{
+    font-family: Rubiks Puddle;
+    src: url(Rubik80sFade-Regulare.ttf)
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-style: 'Poppins', sans-serif;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+    /* border: 2px solid black; */
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+.logo{
+    padding-top: 10px;
+    padding-right:5px ;
+    text-align: center;
+    display: grid;
+    grid-column-start: 1;
+    width: 10%;
+    /* border: 2px solid black; */
+}
+
+.logo img{
+    border-radius: 10px;
+    /* padding: 10px; */
+    
+}
+
+
+
+.name{
+    color: rgb(0, 0, 0);
+    /* border: 2px solid black; */
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: 'Poppins', sans-serif;;
+    justify-content: right;
+    margin: 1px;
+    grid-column-start: 2;
+    text-shadow: 10px 0px 5px #55555506;
+    width: fit-content;
+}
+
+
+.contents{
+    text-align: center;
+    text-decoration: none;
+    font-family: sans-serif;
+    background-color: linear-gradient(to right ,  rgba(117, 40, 40, 0.99), rgb(242, 242, 242));
+    padding: 10px;
+
+}
+
+.contents a{
+    justify-content: center;
+    padding: 20px;
+    -webkit-text-stroke-width: 100%;
+    color: rgb(29, 0, 0);
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bolder;
+}
+
+
+.nike_blazers{
+    display: grid;
+    grid-template-columns: auto auto;
+    box-shadow: 100px;
+    padding: 100px;
+    grid-gap: 15px;
+    grid-column-start: 2;
+    
+}
+
+.nike_blazers img{
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-radius: 10px;
+    box-shadow: 2rem;
+    /* border: 2px solid green; */
+    padding: 10px;
+    grid-row-end: 2;
+    box-shadow: 10px 10px 5px #88888838;
+}
+
+
+.nike_blazers h4{
+    margin: 0;
+    /* border: 2px solid green; */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-left: 10px;
+    grid-column-start: 1;
+    text-shadow: 10px 10px 5px #88885555;
+
+}
+
+hr{
+    width: 750%;
+    text-shadow: 10px 10px 10px #959595;
+}
+
+
+
+
+.vans h4{
+    margin: 0;
+    /* border: 2px solid green; */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-left: 10px;
+    grid-column-start: 1;
+    text-shadow: 10px 10px 5px #88885555;
+
+}
+
+.vans{
+    display: grid;
+    grid-template-columns: auto auto;
+    box-shadow: 100px;
+    padding: 100px;
+    grid-gap: 15px;
+    grid-column-start: 2;
+    
+}
+
+.vans img{
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-radius: 10px;
+    box-shadow: 2rem;
+    /* border: 2px solid green; */
+    padding: 10px;
+    grid-row-end: 2;
+    box-shadow: 10px 10px 5px #88888838;
+}
+
+.adidas_badbunny{
+    display: grid;
+    grid-template-columns: auto auto;
+    box-shadow: 100px;
+    padding: 100px;
+    grid-gap: 15px;
+    grid-column-start: 2;
+    
+}
+
+.adidas_badbunny img{
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-radius: 10px;
+    box-shadow: 2rem;
+    /* border: 2px solid green; */
+    padding: 10px;
+    grid-row-end: 2;
+    box-shadow: 10px 10px 5px #88888838;
+}
+
+
+.adidas_badbunny h4{
+    margin: 0;
+    /* border: 2px solid green; */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-left: 10px;
+    grid-column-start: 1;
+    text-shadow: 10px 10px 5px #88885555;
+
+}
+
+
+.new_balance{
+    display: grid;
+    grid-template-columns: auto auto;
+    box-shadow: 100px;
+    padding: 100px;
+    grid-gap: 15px;
+    grid-column-start: 2;
+    
+}
+
+.new_balance img{
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-radius: 10px;
+    box-shadow: 2rem;
+    /* border: 2px solid green; */
+    padding: 10px;
+    grid-row-end: 2;
+    box-shadow: 10px 10px 5px #88888838;
+}
+
+
+.new_balance h4{
+    margin: 0;
+    /* border: 2px solid green; */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-left: 10px;
+    grid-column-start: 1;
+    text-shadow: 10px 10px 5px #88885555;
+
+}
+
+.footer{
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.instagram a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.whatsapp{
+    font-size: medium;
+}
+
+.whatsapp a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: small;
+}
+
+

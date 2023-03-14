@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'customer_static/shoes.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'customer_static\Bootstrap\css\bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'customer_static/Bootstrap/js/bootstrap.js'%}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        a,i{
+            font-style: 'Poppins', sans-serif;
+        }
+        .contents {
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            background-color: linear-gradient(to right, rgba(117, 40, 40, 0.99), rgb(242, 242, 242));
+            padding: 10px;
+
+        }
+
+        .contents a {
+            justify-content: center;
+            padding: 20px;
+            -webkit-text-stroke-width: 100%;
+            color: rgb(29, 0, 0);
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bolder;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .footer div{
+            font-style: 'Poppins', sans-serif;
+            text-align: justify;
+            width: fit-content;
+        }
+        .columns{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: center;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" href=""></a>
+                <div class="logo">
+                    <img src="{% static 'customer_static/images/wox_logo.jpg'%}" alt="" width="90" height="60"
+                        class="d-inline-block align-text-top">
+                </div>
+                <h4 style="text-align: center;" class="name me-auto">Wocks Fashion Store</h4>
+
+            </div>
+
+        </nav>
+
+    </div>
+    <div class="contents">
+        <a href="{% url 'customer:watches' %}">watches</a>
+        <a
+            href="https://api.whatsapp.com/send/?phone=%2B917306350399&text&type=phone_number&app_absent=0">WhatsAppUs</a>
+        <a href="{% url 'customer:add_to_cart' %}">Cart</a>
+        <a href="">Orders</a>
+        <a href="{% url 'customer:logout' %}">Logout</a>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+    <div class="container-fluid footer">
+
+        <div class="footer">
+            <div class="col-md-6 columns">
+                <p>Follow Us:</p>
+                <br>
+
+                <a href="https://www.instagram.com/wocksfashions/"><i style="font-size:20px" class="fa">&#xf16d;
+                        wocksfashions</i></a> <br>
+                <a href="https://www.instagram.com/wocks_watches/"><i style="font-size:20px" class="fa">&#xf16d;
+                        wocks_watches</i></a><br> <a href="https://www.instagram.com/pretty_petals.in/"><i
+                        style="font-size:20px" class="fa">&#xf16d; pretty_petals.in</a><br>
+            </div>
+
+
+            <div class="col-md-6 columns">
+                <p>Join our WhatsApp Group here</p>
+                <br>
+                <a href="https://chat.whatsapp.com/CbSjukWBBZdHjPgYxSFX1G"><i style="font-size:20px" class="fa">&#xf232;
+                        Wocks Fashion Store</i></a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
