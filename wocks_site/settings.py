@@ -34,7 +34,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',#changed to postgresql_psycopg2 from sqlite3
         'NAME': 'wocks_sneaks', #database name
         'USER':'postgres',
-        'PASSWORD':'blahcoat',
+        'PASSWORD':'',
         'HOST':'localhost',
         'PORT':'5432'
     }
