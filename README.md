@@ -31,7 +31,7 @@
   <ol>
       <li>
           <strong>Clone the repository</strong>:
-          <pre><code>git clone https://github.com/your-username/wocks.com.git</code></pre>
+          <pre><code>git clone https://github.com/hisham-slm/wocks.com.git</code></pre>
       </li>
       <li>
           <strong>Backend Setup</strong>:
